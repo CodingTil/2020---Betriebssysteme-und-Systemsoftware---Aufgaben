@@ -15,11 +15,41 @@
 \begin{document}
 
 %Header
-\ihead{\textbf{Betriebssysteme und Systemsoftware \\ Übungsblatt X} \\Tutorium 1}
+\ihead{\textbf{Betriebssysteme und Systemsoftware \\ Übungsblatt 01} \\Tutorium 1}
 \ohead{Andrès Montoya, 405409 \\ Til Mohr, 405959\\ Marc Ludevid Wulf, 405401}
 
 %Seiteninhalt
-\paragraph{Aufgabe X.Y}
+\paragraph{Aufgabe 1.2}
+    a) Der Kernel-Mode ist ein privilegierter Mode in dem die Module des Kernels ausgeführt werden.
+    Er hat das auschliessliche Zugriffrecht auf den Kernel-Space, den Speicherbereich des Kernels.
+    Der User-Mode hingegen ist für die Ausführung von Anwendungsprogrammen zuständig. Das wechseln zwischen
+    den Modi geschieht über eine klar definierte Schnittstelle. Diese Unterschiedung schützt den Kernel
+    vor Missbrauch durch den Anwendungsprogramme. Oft wird der Kernel selbst ebenfalls in verschiedene
+    Ebenen unterteil um Modularität zu gewährleisten.
 
+    b) Der Aufruf einer Trap kann im User-Modus passieren, der Trap selbst wird dann im Kernel-Modus ausgeführt.
+    Aufrüfe des Grafikentreibers hingegen sollten nur auf den Kernel möglich sein, da nicht jedes Anwendungsprogramm
+    den Grafikentreiber direkt ansprechen sollte. Dieser Zugriff muss über eine vordefinierte Schnittstelle im Kernel
+    geschehen. Den Zugriff zum Druckertreiber kann man auch aus dem User-Modus erlauben, da das ablegen von einer
+    zu druckenden Datei keine Systemkritischen nebenwirkungen haben kann und somit nicht durch den Kernel kontrolliert
+    werden muss.
+
+    c) Es ist sinnvoll Polling einzusetzen wenn das warten auf das Ergebnis eines Prozesses vorhersehbar ist, also das
+    Zeitfenster sehr klein ist, wenn das Ergebnis keine Eile hat, dann kann man durch lange wartezeiten polling verwenden oder
+    Wenn man eine hohe Abfragrate braucht, z.B. Ablesen des Status eines I/O-Pins.
+
+\paragraph{Aufgabe 1.3}
+    a) Der Pointer z wird auf das 4. Element des Arrays data gesetzt, also 'Z'.
+
+    b) Das 4. Element von data wird auf 'H' gesetzt. Damit zeigt nun auch z auf 'H'.
+
+    c) Das 2. Element von data wird auf 'S' gesetzt.
+
+    d) Der Pointer pi wird auf die Adresse von i gesetzt. Also zeigt pi nun auf i.
+
+    e) Diese Anweisung kann man nicht ausführen, da man die Adresse einer Variable nicht setzen kann.
+
+    f) A[1] liefert einen Pointer auf den Array {2,3,2}. Also ist *A[1] = 2. Daraus folgt, dass &data[*A[1]] der Pointer auf
+    das 2. Elements von data liefert. Davon wird der Wert von *pi = 1 abgezogen. Damit ist z das Element an der 1. Stelle von data, also 'u'.
 
 \end{document}
