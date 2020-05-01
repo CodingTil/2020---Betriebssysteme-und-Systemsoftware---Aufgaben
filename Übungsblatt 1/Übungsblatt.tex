@@ -7,6 +7,8 @@
 \usepackage{listings}         %Codeansicht
 \usepackage{scrlayer-scrpage} %Seitenkopf
 \usepackage{tikz}             %tikz
+\usepackage{enumitem}		  %Enumerate
+\usepackage{listings}		  %Code snippets
 \usepackage{amsmath}
 
 \usetikzlibrary{arrows, automata, positioning}
@@ -20,36 +22,65 @@
 
 %Seiteninhalt
 \paragraph{Aufgabe 1.2}
-    a) Der Kernel-Mode ist ein privilegierter Mode in dem die Module des Kernels ausgeführt werden.
-    Er hat das auschliessliche Zugriffrecht auf den Kernel-Space, den Speicherbereich des Kernels.
-    Der User-Mode hingegen ist für die Ausführung von Anwendungsprogrammen zuständig. Das wechseln zwischen
-    den Modi geschieht über eine klar definierte Schnittstelle. Diese Unterschiedung schützt den Kernel
-    vor Missbrauch durch den Anwendungsprogramme. Oft wird der Kernel selbst ebenfalls in verschiedene
-    Ebenen unterteil um Modularität zu gewährleisten.
+\begin{enumerate}[label=\alph*)]
+\item Der Kernel-Mode ist ein privilegierter Mode in dem die Module des Kernels ausgeführt werden. Er hat das auschliessliche Zugriffrecht auf den Kernel-Space, den Speicherbereich des Kernels. Der User-Mode hingegen ist für die Ausführung von Anwendungsprogrammen zuständig. Das wechseln zwischen den Modi geschieht über eine klar definierte Schnittstelle. Diese Unterschiedung schützt den Kernel vor Missbrauch durch den Anwendungsprogramme. Oft wird der Kernel selbst ebenfalls in verschiedene Ebenen unterteil um Modularität zu gewährleisten.
 
-    b) Der Aufruf einer Trap kann im User-Modus passieren, der Trap selbst wird dann im Kernel-Modus ausgeführt.
-    Aufrüfe des Grafikentreibers hingegen sollten nur auf den Kernel möglich sein, da nicht jedes Anwendungsprogramm
-    den Grafikentreiber direkt ansprechen sollte. Dieser Zugriff muss über eine vordefinierte Schnittstelle im Kernel
-    geschehen. Den Zugriff zum Druckertreiber kann man auch aus dem User-Modus erlauben, da das ablegen von einer
-    zu druckenden Datei keine Systemkritischen nebenwirkungen haben kann und somit nicht durch den Kernel kontrolliert
-    werden muss.
+\item Der Aufruf einer Trap kann im User-Modus passieren, der Trap selbst wird dann im Kernel-Modus ausgeführt. Aufrufe des Grafikentreibers hingegen sollten nur auf den Kernel möglich sein, da nicht jedes Anwendungsprogramm den Grafikentreiber direkt ansprechen sollte. Dieser Zugriff muss über eine vordefinierte Schnittstelle im Kernel geschehen. Den Zugriff zum Druckertreiber kann man auch aus dem User-Modus erlauben, da das ablegen von einer zu druckenden Datei keine Systemkritischen nebenwirkungen haben kann und somit nicht durch den Kernel kontrolliert werden muss.
 
-    c) Es ist sinnvoll Polling einzusetzen wenn das warten auf das Ergebnis eines Prozesses vorhersehbar ist, also das
-    Zeitfenster sehr klein ist, wenn das Ergebnis keine Eile hat, dann kann man durch lange wartezeiten polling verwenden oder
-    Wenn man eine hohe Abfragrate braucht, z.B. Ablesen des Status eines I/O-Pins.
+\item Es ist sinnvoll Polling einzusetzen wenn das warten auf das Ergebnis eines Prozesses vorhersehbar ist, also das Zeitfenster sehr klein ist, wenn das Ergebnis keine Eile hat, dann kann man durch lange wartezeiten polling verwenden oder wenn man eine hohe Abfragrate braucht, z.B. Ablesen des Status eines I/O-Pins. Der Einsatz von Interrupts ist dann sinnvoll, wenn das Eintreten eines Ereignisses unvorhersehbar ist, aber möglichst schnell behandelt werden soll. Interrupts werden bespielsweise beim Drücken einer Taste auf der Tastatur eingesetzt. So wird keine CPU-Performance unnötig verbraucht.
+
+\end{enumerate} 
 
 \paragraph{Aufgabe 1.3}
-    a) Der Pointer z wird auf das 4. Element des Arrays data gesetzt, also 'Z'.
+\begin{enumerate}[label=\alph*)]
+\item Der Pointer z wird auf das 4. Element des Arrays data gesetzt, also 'Z'.
 
-    b) Das 4. Element von data wird auf 'H' gesetzt. Damit zeigt nun auch z auf 'H'.
+\item Das 4. Element von data wird auf 'H' gesetzt. Damit zeigt nun auch z auf 'H'.
 
-    c) Das 2. Element von data wird auf 'S' gesetzt.
+\item Das 2. Element von data wird auf 'S' gesetzt.
 
-    d) Der Pointer pi wird auf die Adresse von i gesetzt. Also zeigt pi nun auf i.
+\item Der Pointer pi wird auf die Adresse von i gesetzt. Also zeigt pi nun auf i.
 
-    e) Diese Anweisung kann man nicht ausführen, da man die Adresse einer Variable nicht setzen kann.
+\item Diese Anweisung kann man nicht ausführen, da man die Adresse einer Variable nicht setzen kann.
 
-    f) A[1] liefert einen Pointer auf den Array {2,3,2}. Also ist *A[1] = 2. Daraus folgt, dass &data[*A[1]] der Pointer auf
-    das 2. Elements von data liefert. Davon wird der Wert von *pi = 1 abgezogen. Damit ist z das Element an der 1. Stelle von data, also 'u'.
+\item A[1] liefert einen Pointer auf den Array {2,3,2}. Also ist *A[1] = 2. Daraus folgt, dass \&data[*A[1]] der Pointer auf das 2. Elements von data liefert. Davon wird der Wert von *pi = 1 abgezogen. Damit ist z das Element an der 1. Stelle von data, also 'u'.
+
+\end{enumerate} 
+
+\paragraph{Aufgabe 1.5}
+\begin{enumerate}[label=\alph*)]
+\item Der Grund für scheinbar unterschiedliche Variablenwerte ist auf Überdeckung von globalen Variablen und auf Funktionen, die unerwartete Werde ausgeben, zurückzuführen. Wie in der Aufgabenstellung erklärt, überdecken lokale Variablen globale Variablen mit derselben bezeichnung.
+	\begin{enumerate}[label=Zeile \arabic*:]
+		\item 	Hier werden die in der Methode \verb|main| deklarierten und initialisierten lokalen Variablen \verb|a| und \verb|b|, also \verb|a=5| und \verb|b=6|.
+		\item	In der Methode \verb|summe| werden nicht die Parameter, sondern die globalen Variablen \verb|a| und \verb|b| ausgegeben, also \verb|a=1| und \verb|b=2|.
+		\item	Die Methode \verb|diff| gibt in dieser Methode die lokal deklarierten und initialisierten Variablen \verb|a=4| und \verb|b=3| aus.
+	\end{enumerate}
+	Man sieht, bei jeder Ausgabe handelt es sich um komplett verschiedene Variablen.
+\end{enumerate}
+
+\paragraph{Aufgabe 1.6}
+\begin{enumerate}[label=\alph*)]
+\item Ein \textbf{Buffer Overflow} ergibt sich dann, wenn mehr Daten in einen Buffer (z.B. array) geschrieben werden als der Buffer groß ist. Hierdurch können hinter dem Buffer liegende Programmteile (z.B. andere Daten) überschrieben werden.
+
+\item In \verb|password_checker.c| kann man sich mithilfe von Buffer Overflow unberechtigten Zugriff verschaffen. Da \verb|*access| im Arbeitspeicher direkt hinter \verb|*password_input| liegt, kann man mithilfe von geschickten Eingaben wie \verb|"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1"| \verb|*access| auf \verb|true| setzen und sich so Zugriff verschaffen.
+
+\item Um diese Sicherheitslücke auf diese Art zu verhindern, könnte man einfach zuerst den boolean allocaten, danach den String:
+\begin{lstlisting}[language=C]
+bool *access = malloc(sizeof(bool));
+char *password_input = malloc(BUFFER_SIZE * sizeof(char));
+\end{lstlisting}
+Jedoch kann hier immer noch Buffer Overflow auftreten und womöglich andere Programmteile schädigen. Eine intelligentere Version ist während der String-Eingabe die Anzahl der eingebenen Zeichen mitzuzählen um so einen Buffer Overflow zu verhindern:
+\begin{lstlisting}[language=C]
+int i;
+char v = getchar();
+while(v != '\n') {
+	if(i < BUFFER_SIZE) {
+		*(password_input + i) = v;
+		i++;
+	}
+	v = getchar();
+}
+\end{lstlisting}
+\end{enumerate}
 
 \end{document}
