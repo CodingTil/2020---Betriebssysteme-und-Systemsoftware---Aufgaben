@@ -62,7 +62,7 @@
 \begin{enumerate}[label=\alph*)]
 \item Ein \textbf{Buffer Overflow} ergibt sich dann, wenn mehr Daten in einen Buffer (z.B. array) geschrieben werden als der Buffer groß ist. Hierdurch können hinter dem Buffer liegende Programmteile (z.B. andere Daten) überschrieben werden.
 
-\item In \verb|password_checker.c| kann man sich mithilfe von Buffer Overflow unberechtigten Zugriff verschaffen. Da \verb|*access| im Arbeitspeicher direkt hinter \verb|*password_input| liegt, kann man mithilfe von geschickten Eingaben wie \verb|"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1"| \verb|*access| auf \verb|true| setzen und sich so Zugriff verschaffen.
+\item In \verb|password_checker.c| kann man sich mithilfe von Buffer Overflow unberechtigten Zugriff verschaffen. Da \verb|*access| im Arbeitspeicher direkt hinter \verb|*password_input| liegt, kann man mithilfe von geschickten Eingaben wie \verb|"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1"| (\verb|password_input| und \verb|access| sind im Arbeitsspeicher 32 byte entfernt) \verb|*access| auf \verb|true| setzen und sich so Zugriff verschaffen.
 
 \item Um diese Sicherheitslücke auf diese Art zu verhindern, könnte man einfach zuerst den boolean allocaten, danach den String:
 \begin{lstlisting}[language=C]
