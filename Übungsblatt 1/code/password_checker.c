@@ -14,6 +14,8 @@ int main(void)
     bool *access = malloc(sizeof(bool));
     *access = false;
 
+    printf("%c\n", (char) true);
+
     // SOLUTION
     printf("%p\n", password_input);
     printf("%p\n", access);
