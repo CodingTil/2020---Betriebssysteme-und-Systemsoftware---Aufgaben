@@ -7,7 +7,7 @@ int main(void)
     printf("Meilenwert | Kilometerwert\n");
 
 	int i;
-	for(i = 0; i <= 20; i++) {
+	for(i = 0; i <= 20; i+=2) {
 		printf("%i", i);
 		int j;
 		for(j = 0; j < 8; j++) {
