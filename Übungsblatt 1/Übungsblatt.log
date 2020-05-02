@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.14)  1 MAY 2020 16:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.5.1)  2 MAY 2020 18:49
 entering extended mode
 **./Übungsblatt.tex
 (Übungsblatt.tex
@@ -156,23 +156,23 @@ File: listings.cfg 2020/03/24 1.8d listings configuration
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/koma-script\scrlayer-scrpage.sty"
-Package: scrlayer-scrpage 2020/01/24 v3.29 KOMA-Script package (end user interf
+Package: scrlayer-scrpage 2020/04/19 v3.30 KOMA-Script package (end user interf
 ace for scrlayer)
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/koma-script\scrlayer.sty"
-Package: scrlayer 2020/01/24 v3.29 KOMA-Script package (defining layers and pag
+Package: scrlayer 2020/04/19 v3.30 KOMA-Script package (defining layers and pag
 e styles)
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/koma-script\scrkbase.sty"
-Package: scrkbase 2020/01/24 v3.29 KOMA-Script package (KOMA-Script-dependent b
+Package: scrkbase 2020/04/19 v3.30 KOMA-Script package (KOMA-Script-dependent b
 asics and keyval usage)
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/koma-script\scrbase.sty"
-Package: scrbase 2020/01/24 v3.29 KOMA-Script package (KOMA-Script-independent 
+Package: scrbase 2020/04/19 v3.30 KOMA-Script package (KOMA-Script-independent 
 basics and keyval usage)
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/koma-script\scrlfile.sty"
-Package: scrlfile 2020/01/24 v3.29 KOMA-Script package (loading files)
+Package: scrlfile 2020/04/19 v3.30 KOMA-Script package (loading files)
 )))
 \footheight=\skip56
 Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 210
@@ -597,17 +597,23 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
+Overfull \hbox (26.74841pt too wide) in paragraph at lines 26--27
+\OT1/cmr/m/n/10.95 eben-falls in ver-schiedene Ebe-nen Un-terteil um Mod-u-lari
+tat zu gewahrleisten. 
+ []
+
+
 Overfull \hbox (8.35136pt too wide) in paragraph at lines 28--29
 \OT1/cmr/m/n/10.95 wen-dungspro-gramm den Grafiken-treiber di-rekt ansprechen s
 ollte. Dieser
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
@@ -623,7 +629,7 @@ Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                  \setlength{\headheight}{42.53044pt}
 (scrlayer-scrpage)                in your preamble.
 (scrlayer-scrpage)                I'll also decrease \topmargin on input line 4
-4.
+5.
 
 
 Overfull \vbox (30.53044pt too high) has occurred while \output is active []
@@ -648,12 +654,12 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 ("C:\Program Files\MiKTeX 2.9\tex/latex/listings\lstmisc.sty"
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-) [2]
+)
 Overfull \hbox (48.43903pt too wide) in paragraph at lines 70--71
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-
+[2]
 Overfull \hbox (8.30566pt too wide) in paragraph at lines 72--73
 \OT1/cmr/m/n/10.95 an-dere Pro-grammteile schadigen. Eine in-tel-li-gen-tere V
 er-sion ist wahrend
@@ -676,13 +682,13 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 77.
  [3] (Übungsblatt.aux) ) 
 Here is how much of TeX's memory you used:
- 17961 strings out of 480930
- 381250 string characters out of 2909536
- 831551 words of memory out of 3000000
- 33544 multiletter control sequences out of 15000+200000
+ 17963 strings out of 480930
+ 381266 string characters out of 2909537
+ 830543 words of memory out of 3000000
+ 33546 multiletter control sequences out of 15000+200000
  538515 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,20n,81p,637b,1438s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,21n,81p,637b,1438s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Til Mohr\AppData\Local\MiKTeX\2.9\fonts/pk/
 ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
@@ -691,7 +697,7 @@ s/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
 10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><
 C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progr
 am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Übungsblatt.pdf (3 pages, 102672 bytes).
+Output written on Übungsblatt.pdf (3 pages, 102869 bytes).
 PDF statistics:
  48 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
