@@ -71,7 +71,7 @@ char *password_input = malloc(BUFFER_SIZE * sizeof(char));
 \end{lstlisting}
 Jedoch kann hier immer noch Buffer Overflow auftreten und womöglich andere Programmteile schädigen. Eine intelligentere Version ist während der String-Eingabe die Anzahl der eingebenen Zeichen mitzuzählen um so einen Buffer Overflow zu verhindern:
 \begin{lstlisting}[language=C]
-int i;
+int i = 0;
 char v = getchar();
 while(v != '\n') {
 	if(i < BUFFER_SIZE) {
