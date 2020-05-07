@@ -41,7 +41,9 @@ bool isEmpty(StackNode *root)
  */
 void push(StackNode **pointer2root, char *command)
 {
-    // YOUR SOLUTION GOES HERE ...
+    StackNode *node = newNode(command);
+    node->next_node = *pointer2root;
+    *pointer2root = node;
 }
 
 /**
@@ -49,7 +51,12 @@ void push(StackNode **pointer2root, char *command)
  */
 bool pop(StackNode **pointer2root, char **pointer2command)
 {
-    // YOUR SOLUTION GOES HERE ...
+    if(isEmpty(*pointer2root)) return false;
+    StackNode *root = *pointer2root;
+    *pointer2command = ((*root).command);
+    *pointer2root = ((*root).next_node);
+    free(root);
+    return true;
 }
 
 int main()
@@ -61,7 +68,6 @@ int main()
     push(&root, "delete: grades.txt");
 
     char *command;
-
     while (pop(&root, &command))
     {
         printf("'%s' popped from stack \n", command);
