@@ -1,19 +1,38 @@
 #!/bin/bash
 
-END=2
+# Basename
+# Anzahl tabs
+print_directory () {
+    printf $
+    for e in "$1"*; do
+        if [ -f "$e" ]; then
+            for i in $(seq 1 $2); do
+                printf "\t";
+            done
+            printf "File: $e\n";
+        fi
+    done
 
-function print_tabs () {
-    for i in $(seq 1 $END); do
-    printf "\t"
+    for e in "$1"*; do
+        if [ -d "$e" ]; then
+            for i in $(seq 1 $2); do
+                printf "\t";
+            done
+            printf "Directory: $e\n"
+            print_directory '"$e"/' $(($2+1))
+        fi
     done
 }
 
-function print_directory () {
-    FILES="$(ls -l | grep ^-)"
-    while read -r line; do
-    print_tabs
-    printf "%s" $line
-    printf "\n"
-    done <<< $FILES
+print_directory_2 () {
+    Directory=$(ls -l $1 | grep "^d")
+    printf $Directory
 }
-print_directory
+
+printf "Starting \n"
+if [ $# -eq 0 ]; then
+    print_directory "./" 0
+else
+    print_directory "$1" 0
+fi
+printf "Done \n"
