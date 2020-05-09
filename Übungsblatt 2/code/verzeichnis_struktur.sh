@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# test LF
 # Basename
 # Anzahl tabs
 print_directory () {
