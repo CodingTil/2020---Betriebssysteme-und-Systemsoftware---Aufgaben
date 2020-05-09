@@ -41,7 +41,7 @@
 
 \item Strace kann dazu genutzt werden um die Systemcalls die ein Anwendungsprogramm ausführt zu loggen.
 
-\item 
+\item Da \verb|ls| nur die Namen der Dateien in dem Ordner ausgeben muss, sind nur wenige Systemcalls notwending (20 bei uns). \verb|ls -la| gibt aber zu dem Namen zusätzlich noch andere Daten aus (Berechtigungen, User, Date, etc.) sind hier deutlich mehr Systemcalls notwendig (294 bei uns). Zudem werden bei \verb|ls| hauptsächlich \verb|openstat| (9) und \verb|fstat| (10) verwendet, bei \verb|ls -la| allerdings eher \verb|lstat| (233) und \verb|openstat| (38). Daran kann man sehen, dass auch nur eine Paremeteränderung eines Commdands die Funktionsweise des Befehls komplett verändern kann.
 \end{enumerate}
 
 \end{document}
