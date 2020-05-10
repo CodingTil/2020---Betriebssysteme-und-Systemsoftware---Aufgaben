@@ -8,7 +8,8 @@ print_directory () {
             for i in $(seq 1 $2); do
                 printf "\t";
             done
-            OUTPUT=$(sed 's/^..//' <<<$e)
+            OUTPUT=$(sed 's/^\.//g' <<<$e)
+            OUTPUT=$(sed 's:^/::g' <<<$OUTPUT)
             printf "File: $OUTPUT \n";
         fi
     done
@@ -18,7 +19,8 @@ print_directory () {
             for i in $(seq 1 $2); do
                 printf "\t";
             done
-            OUTPUT=$(sed 's/^..//' <<<$e)
+            OUTPUT=$(sed 's/^\.//g' <<<$e)
+            OUTPUT=$(sed 's:^/::g' <<<$OUTPUT)
             printf "Directory: $OUTPUT \n"
             print_directory "$e/" $(($2+1))
         fi
