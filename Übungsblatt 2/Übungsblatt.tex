@@ -23,7 +23,7 @@
 %Seiteninhalt
 \paragraph{Aufgabe 2.2}
 \begin{enumerate}[label = \alph*)]
-\item \texttt{echo "BuS 1020: Abgabe der 2. Uebung am 11.5."| sed '0,/1/ s/1/2/}
+\item \texttt{echo "BuS 1020: Abgabe der 2. Uebung am 11.5."| sed 's/1/2/'}
 %test
 \item Siehe $script.sh$.
 
@@ -35,9 +35,9 @@
 
 \paragraph{Aufgabe 2.3}
 \begin{enumerate}[label = \alph*)]
-\item Systemcalls sind die Schnittstelle zwischen dem User-Mode und dem Kernel-Mode. Durch Systemcalls wird können die Anwendungsprogramme und Standardbibliiotheken auf Kernel-Funktionalität zugreifen.
+\item Systemcalls sind die Schnittstelle zwischen dem User-Mode und dem Kernel-Mode. Durch Systemcalls können die Anwendungsprogramme und Standardbibliiotheken auf Kernel-Funktionalität zugreifen.
 
-\item Accept entfernt das älteste Element von der Warteschlange an anstehenden Verbindungen die an einem Socket anliegen um diese Verbindung zu bearbeiten. Open lädt eine Datei um mit dieser arbieten zu können. Dazu wird ein File descriptor zurückgegeben. Write schreibt dann von einem übergebenen buffer in die Datei die durch einen file descriptor beschrieben wird. Mmap schreibt und liesst Informationen aus einer virtuellen addresse??? Brk steht für program break und dieser markiert das Ende von dem Speicher der einem Prozess zusteht. Durch das verschieben kann man den zu Verfügung gestellten Speicher also erweitern oder verkleinern.
+\item Accept entfernt das älteste Element von der Warteschlange an anstehenden Verbindungen die an einem Socket anliegen um diese Verbindung zu bearbeiten. Open lädt eine Datei um mit dieser arbieten zu können. Dazu wird ein File descriptor zurückgegeben. Write schreibt dann von einem übergebenen buffer in die Datei die durch einen file descriptor beschrieben wird. Mmap erzeugt eine neue Mapping in dem virtuellen Addressspeicher des Prozesses. Brk steht für program break und dieser markiert das Ende von dem Speicher der einem Prozess zusteht. Durch das verschieben kann man den zu Verfügung gestellten Speicher also erweitern oder verkleinern.
 
 \item Strace kann dazu genutzt werden um die Systemcalls die ein Anwendungsprogramm ausführt zu loggen.
 

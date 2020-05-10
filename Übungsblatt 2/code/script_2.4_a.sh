@@ -1,5 +1,5 @@
 #!/bin/bash
 
-for e in $(ls); do
-    echo $(stat -c '%s' "$e") "$e"
+for e in $(ls -a); do
+    echo $(stat -c '%s %n' "$e")
 done
