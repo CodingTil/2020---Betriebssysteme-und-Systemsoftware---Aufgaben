@@ -1,0 +1,38 @@
+\documentclass[11pt]{article}
+
+%Packages
+\usepackage{amsfonts}	      %Mathematische Zeichen und Fonts
+\usepackage{mathtools}        %Extra Mathematische Symbole
+\usepackage{extarrows}	      %Extra Pfeile
+\usepackage{listings}         %Codeansicht
+\usepackage{scrlayer-scrpage} %Seitenkopf
+\usepackage{tikz}             %tikz
+\usepackage{enumitem}		  %Enumerate
+\usepackage{listings}		  %Code snippets
+\usepackage{amsmath}
+
+\usetikzlibrary{arrows, automata, positioning}
+\pagestyle{scrheadings}
+
+\begin{document}
+
+%Header
+\ihead{\textbf{Betriebssysteme und Systemsoftware \\ Übungsblatt 03} \\Tutorium 1}
+\ohead{Andrés Montoya, 405409 \\ Til Mohr, 405959\\ Marc Ludevid Wulf, 405401}
+
+%Seiteninhalt
+\paragraph{Aufgabe 3.1}
+
+\begin{enumerate}[label=\alph*)]
+\item Siehe prozesse.c.
+
+\item fprintf nutzt im Gegensatz zu write einen Buffer. Dieser muss mittels fflush "losgeschickt" werden. Dies ist bei write nicht notwendig, da der übergebene String direkt dem Kernel übergeben wird um diesen zu printen. Bei mehreren Ausgaben ist fprintf besser in dem Sinn, dass es die String zusammenfasst und diese mit einem fflush alle zussammen ausgedruckt werden können. Da bei write jedes mal, das etwas gedruckt wird ein syscall ausgeführt wird ist es in diesem Fall langsamer. Soll eine Ausgabe so schnell wie möglich geprintet werden sollte man write nutzen. In jedem anderen Fall sollte fprintf und fflush effizienter sein.
+
+\item Zombie-Prozesse sind Prozesse die zwar geendet haben, aber der zugehörige Parent-Prozess den Exit-Status noch nicht gelesen hat. Das heisst, dass noch nicht wait() aufgerufen wurde. Sobald der exit-Status gelesen wurde kann der Prozess dann von der Prozess-Tabelle entfernt werden.
+
+\item Ein einfaches Beispiel könnte das Senden von Signalen zur Kommunikation mit dem Parent-Prozess sein, welches die PID benötigt.
+
+\item Siehe letter\_count.c.
+\end{enumerate}
+
+\end{document}
