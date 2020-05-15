@@ -30,13 +30,13 @@ void parent_proc()
 int main(void)
 {
   if (fork() == 0)
-    child_A_proc();
-  else {
     if (fork() == 0) {
       child_B_proc();
     } else {
-      parent_proc();
+      child_A_proc();
     }
+  else {
+    parent_proc();
   }
 
   return 0;
