@@ -22,7 +22,6 @@
 
 %Seiteninhalt
 \paragraph{Aufgabe 3.1}
-
 \begin{enumerate}[label=\alph*)]
 \item Siehe prozesse.c.
 
@@ -33,6 +32,56 @@
 \item Ein einfaches Beispiel könnte das Senden von Signalen zur Kommunikation mit dem Parent-Prozess sein, welches die PID benötigt.
 
 \item Siehe letter\_count.c.
+\end{enumerate}
+
+\paragraph{Aufgabe 3.2}
+\begin{enumerate}[label=\alph*)]
+\item In den Blättern stehen alle Ausgaben, die von dem jeweiligen Prozess erzeugt wurden. In den Knoten stehen die Zeilennummern, an denen die $fork$-Anweisung ausgeführt wurde.
+\begin{center}
+\rotatebox{270}{
+\begin{tikzpicture}[
+  level 1/.style={sibling distance=25em},
+  level 2/.style={sibling distance=18em},
+  level 3/.style={sibling distance=10em},
+  level 4/.style={sibling distance=4em},
+  every node/.style = {shape=rectangle, rounded corners,
+    draw, align=center,
+    top color=white, bottom color=blue!20}]]
+  \node {6}
+    child { node {8} 
+		child { node {$u,S$} }
+		child { node {$B,S$} }    
+    }
+    child { node {16}
+    	child { node {17}
+    		child { node {19}
+    			child { node {$Zwan$} }
+    			child { node {$20,Zig$} }
+    		}
+    		child { node {19}
+    			child { node {$Zwan$} }
+    			child { node {$20,Zig$} }
+    		}
+    	}
+    	child { node {17}
+    		child { node {19}
+    			child { node {$Zwan$} }
+    			child { node {$20,Zig$} }
+    		}
+    		child { node {19}
+    			child { node {$Zwan$} }
+    			child { node {$20,Zig$} }
+    		}
+    	}
+    };
+\end{tikzpicture}
+}
+\end{center}
+
+\item $u$ wird vor $B$ ausgegeben, da der Prozess, der $B$ ausgibt, ein Kindprozess von dem Prozess ist, der $u$ ausgibt. In Zeile 8 wird dieser Prozess erstellt. Der Elternprozess gibt aber fast sofort später $u$ aus, während der Kindprozess noch gestartet wird.
+
+\item \verb|wait(NULL)| warted auf die Terminierung $eines$ Kindprozesses und gibt die PID des jeweiligen Kindprozesses zurück. Wenn \verb|wait(NULL)| $0$ zurückgibt, bedeutet dies, dass bereits alle Kindprozesse terminiert sind. Fügt man also zum Ende von \verb|main| die Zeile \verb|while(wait(NULL) > 0);| hinzu, so terminiert erst der Root-Prozess, wenn alle seiner Kinder terminiert sind. Dies gilt analog auch für alle Kindprozesse, die erst terminieren, wenn deren Kinder terminiert sind.
+
 \end{enumerate}
 
 \end{document}
