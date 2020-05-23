@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.5.1)  21 MAY 2020 15:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.5.1)  23 MAY 2020 11:33
 entering extended mode
 **./Übungsblatt.tex
 (Übungsblatt.tex
@@ -644,24 +644,61 @@ in []\OT1/cmr/m/n/10.95 die Zeile [][]\OT1/cmtt/m/n/10.95 while(wait(NULL) > 0)
 ;
  []
 
-[3] (Übungsblatt.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+[]\OT1/cmr/m/n/10.95 Vereinfachte Syn-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+\OT1/cmr/m/n/10.95 chro-ni-sa-tion zwis-chen
+ []
+
+
+Underfull \hbox (badness 2608) in paragraph at lines 99--100
+[]\OT1/cmr/m/n/10.95 Langsame Kom-mu-nika-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+[]\OT1/cmr/m/n/10.95 Beschleunigung der
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+[]\OT1/cmr/m/n/10.95 Beidseitige In-for-ma-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+[]\OT1/cmr/m/n/10.95 Erfordert Syn-chro-ni-sa-
+ []
+
+
+Overfull \hbox (75.26088pt too wide) in paragraph at lines 89--112
+[][] 
+ []
+
+[3] [4] (Übungsblatt.aux) ) 
 Here is how much of TeX's memory you used:
- 17775 strings out of 480930
- 383037 string characters out of 2909537
+ 17779 strings out of 480930
+ 383099 string characters out of 2909537
  668162 words of memory out of 3000000
- 33371 multiletter control sequences out of 15000+200000
- 538174 words of font info for 46 fonts, out of 3000000 for 9000
+ 33374 multiletter control sequences out of 15000+200000
+ 538515 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,81p,670b,1670s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
-xsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Übungsblatt.pdf (3 pages, 91250 bytes).
+ <C:\Users\Til Mohr\AppData\Local\MiKTeX\2.9\fonts/
+pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmbxsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Übungsblatt.pdf (4 pages, 103586 bytes).
 PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
+ 53 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  19 words of extra memory for PDF output out of 10000 (max. 10000000)
 

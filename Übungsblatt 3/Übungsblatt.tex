@@ -81,7 +81,40 @@
 \item $u$ wird vor $B$ ausgegeben, da der Prozess, der $B$ ausgibt, ein Kindprozess von dem Prozess ist, der $u$ ausgibt. In Zeile 8 wird dieser Prozess erstellt. Der Elternprozess gibt aber fast sofort später $u$ aus, während der Kindprozess noch gestartet wird.
 
 \item \verb|wait(NULL)| warted auf die Terminierung $eines$ Kindprozesses und gibt die PID des jeweiligen Kindprozesses zurück. Wenn \verb|wait(NULL)| $0$ zurückgibt, bedeutet dies, dass bereits alle Kindprozesse terminiert sind. Fügt man also zum Ende von \verb|main| die Zeile \verb|while(wait(NULL) > 0);| hinzu, so terminiert erst der Root-Prozess, wenn alle seiner Kinder terminiert sind. Dies gilt analog auch für alle Kindprozesse, die erst terminieren, wenn deren Kinder terminiert sind.
-
 \end{enumerate}
 
+\paragraph{Aufgabe 3.3}
+\begin{enumerate}[label=\alph*)]
+\item
+\begin{tabular}{ |p{3cm}||p{5cm}|p{5cm}| }
+\hline
+& Vorteile & Nachteile \\
+\hline
+\hline
+Pipes &
+\begin{itemize}
+\item Vereinfachte Synchronisation zwischen Prozessen
+\end{itemize} & \begin{itemize}
+\item Einseitiger Informationsfluss
+\item Langsame Kommunikation
+\item Prozesse können freezen
+\end{itemize}\\
+\hline
+Shared Memory & \begin{itemize}
+\item Beschleunigung der Kommunikation
+\item Beidseitige Informationsfluss möglich
+\item Prozesse unabhängig von einander $\rightarrow$ freezen nicht
+\end{itemize} & \begin{itemize}
+\item Erfordert Synchronisation zwischen Prozessen
+\end{itemize}\\
+\hline
+\end{tabular}
+
+\item
+
+\item Ein Prozess bezeichnet ein Programm im Stadium der Ausführung. Dazu wird jedem Prozess ein Process Control Block (PCB) zugewiesen, der atuelle Werte und Zustände des Prozesses beinhaltet. Hierzu zhählen beispielsweise alle Register, die Daten auf dem Arbeitsspeicher und vom Prozess geöffnete Dateien. Zudem besitzt jede PCB einen Programmzähler, wodurch erst die simultane Abarbeitung von Prozessen auf einer CPU ermöglicht wird.\\
+Ein Thread ist eine Erweiterung des Prozess-Konzepts. Ein Prozess kann mehrere Threads erstellen, was eine Granulierung in der Strukturierung ermöglicht. Da jeder Thread einen eigenen Kontrollfluss besitzt, kann man hierdurch unabhängige Teilaufgaben gleichzeitig bearbeiten. Zudem teilen sich die Threads eines Programmes einige Werte und Zustände, neben der CPU-Zeit. All dies kann zu einer effizienteren Abarbeitung mit Threads als ohne führen.
+
+\item
+\end{enumerate}
 \end{document}
