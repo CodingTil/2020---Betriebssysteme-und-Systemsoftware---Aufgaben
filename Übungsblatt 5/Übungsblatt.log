@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.5.1)  10 MAY 2020 17:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.5.1)  15 JUN 2020 14:30
 entering extended mode
 **./Übungsblatt.tex
 (Übungsblatt.tex
@@ -597,18 +597,52 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
+("C:\Program Files\MiKTeX 2.9\tex/latex/listings\lstlang1.sty"
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/listings\lstmisc.sty"
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+)
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
+3.
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\omscmr.fd"
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Overfull \hbox (50.8371pt too wide) in paragraph at lines 53--57
+\OT1/cmr/m/n/10.95 dann der an-dere Wa-gen, bevor der er-ste Wa-gen uberhaupt 
+[][]\OT1/cmtt/m/n/10.95 eingefahreneneWagen
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--57
+
+ []
+
 
 Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                At least 42.53044pt needed,
@@ -618,7 +652,7 @@ Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                e.g., using
 (scrlayer-scrpage)                  \setlength{\headheight}{42.53044pt}
 (scrlayer-scrpage)                in your preamble.
-(scrlayer-scrpage)                I'll also decrease \topmargin on input line 2
+(scrlayer-scrpage)                I'll also decrease \topmargin on input line 5
 7.
 
 
@@ -628,21 +662,26 @@ Overfull \vbox (30.53044pt too high) has occurred while \output is active []
 [1{C:/Users/Til Mohr/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 ]
-(Übungsblatt.aux) ) 
+[2] (Übungsblatt.aux) ) 
 Here is how much of TeX's memory you used:
- 17535 strings out of 480930
- 376857 string characters out of 2909537
- 635889 words of memory out of 3000000
- 33132 multiletter control sequences out of 15000+200000
- 538006 words of font info for 45 fonts, out of 3000000 for 9000
+ 17944 strings out of 480930
+ 380904 string characters out of 2909537
+ 831948 words of memory out of 3000000
+ 33531 multiletter control sequences out of 15000+200000
+ 538174 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,20n,81p,431b,442s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxsl1
-0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
-Output written on Übungsblatt.pdf (1 page, 38862 bytes).
+ 64i,20n,81p,431b,1462s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
+xsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Übungsblatt.pdf (2 pages, 94599 bytes).
 PDF statistics:
- 21 PDF objects out of 1000 (max. 8388607)
+ 44 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

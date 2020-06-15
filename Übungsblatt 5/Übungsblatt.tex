@@ -20,11 +20,46 @@
 \ihead{\textbf{Betriebssysteme und Systemsoftware \\ Übungsblatt 3} \\Tutorium 1}
 \ohead{Andrés Montoya, 405409 \\ Til Mohr, 405959\\ Marc Ludevid Wulf, 405401}
 
+Vorlesungen 6.2.c - 6.2.e sind immer noch nicht auf Moodle, 2 Tage vor der Abgabe....
+
 %Seiteninhalt
 \paragraph{Aufgabe 5.1}
 
 
 \paragraph{Aufgabe 5.2}
+\begin{enumerate}[label=\alph*)]
+\item Sei \verb|use| ein Zählsemaphore, der auf den Wert \verb|0| initialisiert wurde. Seien \verb|empty| und \verb|full| Zählsemaphore, die auf \verb|n| und \verb|0| initialisiert werden und beide Maximalwerte von \verb|n| haben.
+\begin{lstlisting}[language=C]
+void enqueue(element) {
+	wait(empty);
+	wait(use);
+	queue.add(element);
+	signal(use);
+	signal(full);
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=C]
+element dequeue() {
+	wait(full);
+	wait(use);
+	element := queue.pop();
+	signal(use);
+	signal(empty);
+	return element;
+}
+\end{lstlisting}
+
+\item Es können zwei Wagen gleichzeitig einfahren, falls 2 Wagen aufs einfahren Warten (\verb|while|-Schleife Zeile 5), \verb|eingefahreneneWagen| auf \verb|0| gesetzt wird, dann zuerst der eine Wagen die \verb|while|-Schleife verlässt, dann der andere Wagen, bevor der erste Wagen überhaupt \verb|eingefahreneneWagen| auf \verb|1| setzen konnte.
+\\\\Es können mehrere Besucher gleichzeitig einen Wagen betreten: Sei 1 Wagen gerade eingefahren, 3 Besucher warten aufs Betreten (\verb|while|-Schleife Zeile 17). Wenn wie oben alle 3 Besucher direkt hintereinander deren \verb|while|-Schleifen verlassen, ohne Zeile 19 einmal auszuführen, können diese 3 Besucher den Wagen betreten.
+\\\\In beiden Szenarien sind die Anzahlen nur beispiele, es kann für beliebiges $n\in\mathbb{N}$ auftreten.
+\\\\Zudem ist wird nie sichergestellt, dass sowohl Besucher als auch Wagen der Reihe nach betreten/einfahren. Gerade bei den Wagen kann dies fatal werden, wenn sie auf einer festen Spur fahren und ein hinterer Wagen einfahren will und dabei andere Wagen zerstört.
+
+\item 
+
+\item
+
+\end{enumerate}
 
 
 \paragraph{Aufgabe 5.3}
