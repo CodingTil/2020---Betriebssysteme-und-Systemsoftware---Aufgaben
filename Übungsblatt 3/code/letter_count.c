@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 #define CHARACTERS 3
-#define PRINT_INTERVAL 10
+#define PRINT_INTERVAL 100
 
 int main() {
     char c;
