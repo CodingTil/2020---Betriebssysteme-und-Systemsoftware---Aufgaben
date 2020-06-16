@@ -21,6 +21,7 @@ struct restaurant_s
     int customers_in_queue;
     int customers_in_restaurant;
     sem_t shared_memory_lock;
+    sem_t mask_count;
 };
 
 int shouldEnd = 0; /* to terminate for-loop */
@@ -60,12 +61,35 @@ int main(int argc, char **argv)
      */
     sem_init(&shar_mem->free_space_inside, 1, MAX_CUSTOMERS);
     sem_init(&shar_mem->shared_memory_lock, 1, 1);
+    sem_init(&shar_mem->mask_count, 1, 0);
 
     /* initialize random number generator */
     srand(time(NULL));
 
     /* catch interrupts */
     signal(SIGINT, signal_handler);
+
+    /* Create Kellner */
+    f_pid = fork();
+    if (f_pid == 0) {
+        // Kellner
+        signal(SIGINT, SIG_DFL);
+        int i;
+        int j;
+
+        while (1) {
+            i = (rand() % 3) + 3;
+
+            for (j = 0; j < i; j++) {
+                sem_post(&shar_mem->mask_count);
+            }
+            
+            usleep(((rand() % 6) + 3) * 1000000);
+        }
+
+
+        exit(0);
+    }
 
     // root process
     while (!shouldEnd)
@@ -121,6 +145,7 @@ int main(int argc, char **argv)
                 else
                 {
                     /* we are in, so we leave the queue */
+                    sem_wait(&shar_mem->mask_count);
                     sem_wait(&shar_mem->shared_memory_lock);
                     shar_mem->customers_in_queue--;
                     shar_mem->customers_in_restaurant++;
@@ -168,6 +193,13 @@ int main(int argc, char **argv)
     /* ok we should end here so wait for all children to terminate */
     printf("Owner: Close the kitchen, wait for customers to leave\n");
 
+    /* refill mask one last time so that no customer is waiting forever for the masks to be refilled.
+        otherwise the program could possibly not terminate */
+    
+    for (int i = 0; i < MAX_CUSTOMERS; i++) {
+        sem_post(&shar_mem->mask_count);
+    }
+
     for (int i = 0; i < MAX_PROCESSES; i++)
     {
         if (shar_mem->pid[i] != -1)
@@ -178,6 +210,7 @@ int main(int argc, char **argv)
 
     sem_destroy(&shar_mem->free_space_inside);
     sem_destroy(&shar_mem->shared_memory_lock);
+    sem_destroy(&shar_mem->mask_count);
 
     /* detach shared memory */
     shmdt(shar_mem);

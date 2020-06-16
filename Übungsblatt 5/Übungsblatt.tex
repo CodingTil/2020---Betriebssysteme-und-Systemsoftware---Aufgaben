@@ -24,7 +24,9 @@ Vorlesungen 6.2.c - 6.2.e sind immer noch nicht auf Moodle, 2 Tage vor der Abgab
 
 %Seiteninhalt
 \paragraph{Aufgabe 5.1}
-
+Nein, die Implementierung funktioniert nicht wie gewünscht:
+Folgendes Beispiel könnte nicht wie gewünscht funktionieren: Angenommes es kommt zuerst ein Politiker p1 und dann ein Jornalist j1 an. Dann wird durch das signal von p1 j1 im zweiten wait sein. Wenn dann ein weiterer Jornalist j2 und dann ein weiterer Politiker p2 ankommt können zwei Szenarien passieren: entweder das signal von p2 befreit j1 und somit funktioniert das Programm wie gewünscht, oder j2 konsumiert das signal und somit sind beide Jornalisten im zweiten wait. Das ist nicht gewünscht.
+Die Lösung ist einen Mutex reporterWaiting die sicherstellt, dass nur ein Journalist in dem kritischen Bereich befindet. Also muss man lock(reporterWaiting) als erste und release(reporterWaiting) als letzte Anweisung der Methode reporterArrives() einfügen.
 
 \paragraph{Aufgabe 5.2}
 \begin{enumerate}[label=\alph*)]
@@ -55,13 +57,40 @@ element dequeue() {
 \\\\In beiden Szenarien sind die Anzahlen nur beispiele, es kann für beliebiges $n\in\mathbb{N}$ auftreten.
 \\\\Zudem ist wird nie sichergestellt, dass sowohl Besucher als auch Wagen der Reihe nach betreten/einfahren. Gerade bei den Wagen kann dies fatal werden, wenn sie auf einer festen Spur fahren und ein hinterer Wagen einfahren will und dabei andere Wagen zerstört.
 
-\item 
+\item Man braucht einen Mutex wagenPlatz der auf 0 initialisiert wird, eine Zählsemaphore besucherPlatz das auf 0 initialisiert wird und einen Maximalwert von der maximalen Länge der Warteschlange der Achterbahn hat und eine Zählsemaphore besucherEingetreten das auf 0 initialisiert wird und einen Maximalwert von 2 hat.
 
-\item
+\begin{lstlisting}[language=C]
+void AnkunftWagen() {
+	wait(wagenPlatz);
+	fahreAufPlattform();
+	oeffnetTueren();
+	signal(besucherPlatz);
+	signal(besucherPlatz);
+	wait(besucherEingetreten);
+	wait(besucherEingetreten);
+	schliesseTueren();
+	verlassePlattform();
+	signal(wagenPlatz);
+}
+\end{lstlisting}
+
+\begin{lstlisting}{language=C}
+void AnkuftBesucher() {
+	wait(besucherPlatz);
+	betreteWagen();
+	signal(besucherEingetreten);
+}
+\end{lstlisting}
+
+\item Ja, man benutzt eine mit einem Mutex geschützte priorityQueue. VIP-Besucher erhalten eine niedrigere Priority als normale Besucher. Dadurch würden diese immer zuerst drankommen.
 
 \end{enumerate}
 
 
 \paragraph{Aufgabe 5.3}
+\begin{enumerate}[label=\alph*)]
+\item Siehe \verb|restaurant_geruest.c|
+\item Siehe \verb|restaurant_geruest_b.c|
+\end{enumerate}
 
 \end{document}
