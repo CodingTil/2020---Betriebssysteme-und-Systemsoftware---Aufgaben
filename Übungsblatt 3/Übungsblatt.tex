@@ -49,8 +49,8 @@
     top color=white, bottom color=blue!20}]]
   \node {6}
     child { node {8} 
-		child { node {$u,S$} }
-		child { node {$B,S$} }    
+		child { node {$B,S$} }
+		child { node {$u,S$} }    
     }
     child { node {16}
     	child { node {17}
@@ -110,11 +110,15 @@ Shared Memory & \begin{itemize}
 \hline
 \end{tabular}
 
-\item
+\item Named Pipes haben die gleichen Vorteile und Nachteile wie normale Pipes, das heisst, dass eine Synchronisation zwischen den Prozessen nicht notwendig ist, andererseits ist die Kommmunikation nur einseitig und es kann zum Freezen eines Prozesses kommen. Named Pipes haben einen Eintrag im Dateisystem, also eine Kennung und sind durch Zugriffrechte identifizierbar.
 
-\item Ein Prozess bezeichnet ein Programm im Stadium der Ausführung. Dazu wird jedem Prozess ein Process Control Block (PCB) zugewiesen, der atuelle Werte und Zustände des Prozesses beinhaltet. Hierzu zhählen beispielsweise alle Register, die Daten auf dem Arbeitsspeicher und vom Prozess geöffnete Dateien. Zudem besitzt jede PCB einen Programmzähler, wodurch erst die simultane Abarbeitung von Prozessen auf einer CPU ermöglicht wird.\\
+Während Pipes Bytestreams benutzen, verwenden Messages eine vordefinierte Länge und können getyped sein. Message Passing ist ausserdem geeigent für Kommunikation zwischen mehreren Prozessen.
+
+Shared Memory nutzt gemeinsame Speicherbereiche die geschützt werden müssen. Der Zugriff muss ausserdem synchronisiert werden. Dafür sind sie jedoch effizienter und beschleunigen somit die Kommmunikation.
+
+\item Ein Prozess bezeichnet ein Programm im Stadium der Ausführung. Dazu wird jedem Prozess ein Process Control Block (PCB) zugewiesen, der aktuelle Werte und Zustände des Prozesses beinhaltet. Hierzu zählen beispielsweise alle Register, die Daten auf dem Arbeitsspeicher und vom Prozess geöffnete Dateien. Zudem besitzt jede PCB einen Programmzähler, wodurch erst die simultane Abarbeitung von Prozessen auf einer CPU ermöglicht wird.\\
 Ein Thread ist eine Erweiterung des Prozess-Konzepts. Ein Prozess kann mehrere Threads erstellen, was eine Granulierung in der Strukturierung ermöglicht. Da jeder Thread einen eigenen Kontrollfluss besitzt, kann man hierdurch unabhängige Teilaufgaben gleichzeitig bearbeiten. Zudem teilen sich die Threads eines Programmes einige Werte und Zustände, neben der CPU-Zeit. All dies kann zu einer effizienteren Abarbeitung mit Threads als ohne führen.
 
-\item
+\item Zu viele Threads sind schlecht, da diese System resources verbrauchen, wie zum Beispiel CPU-time oder Kernel-Funktionsaufrufen, wodurch auch Bugs enstehen können. Zudem fügen sie Komplexität zum Code hinzu, was Verständlichkeit und Robusheit verschlechtert und dadurch das Debuggen erschweren.
 \end{enumerate}
 \end{document}
